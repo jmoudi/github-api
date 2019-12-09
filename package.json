@@ -1,0 +1,34 @@
+{
+  "name": "github-api",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "typings": "./dist/index.d.ts",
+  "browser": "./dist/index.js",
+  "scripts": {
+    "compile": "tsc -b --listEmittedFiles --pretty --verbose -w",
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "fp-ts": "",
+    "fp-ts-ramda": "",
+    "fp-ts-routing": "",
+    "rxjs": "",
+    "@octokit/rest":"",
+    "github-api":""
+  },
+  "devDependencies": {
+    "@types/jest": "",
+    "@types/node": ""
+  },
+  "private": true,
+  "author": {
+    "name": "Jonas Moudi",
+    "email": "jonas.moudi@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmoudi/ts-std-fp.git"
+  },
+  "license": "MIT"
+}
