@@ -1,4 +1,4 @@
-import { init } from '@/runner';
+import { run } from '@/runner';
 
 const getArgs = async () => {
 
@@ -6,8 +6,7 @@ const getArgs = async () => {
 async function main(){
     console.clear()
     console.log(`Start`);
-    const args = await getArgs();
-    init(args);
+    await run();
 }
 
 main()

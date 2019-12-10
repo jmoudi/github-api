@@ -1,19 +1,27 @@
-import { config } from '@/constants';
+
 import {Yaml} from '@encoding/yaml';
 import {readFile} from '@std/fs';
+import {find} from '@std/fp';
 
  
-interface GithubApiConfig {
-    credentials: {
-        user: string
-        password: string
-    }
+export interface Credentials {
+    username: string
+    password: string
+    token: string
 }
-export const loadConfig = async (opts?) => {
-    const ma = await readFile(config.keymap, 'utf-8'); //.then(s => s.match(re));
-    const conf: GithubApiConfig = await Yaml.parse(ma);
-    return conf;
 
+export interface GithubApiConfig {
+    credentials: {
+        username: string
+        password: string
+        token: string
+    }
 
-    
+}
+export const loadConfig = async () => {
+    const searchPaths = [
+        "conf.yml"
+    ];
+    const str = await readFile(find(searchPaths), 'utf-8'); //.then(s => s.match(re));
+    return Yaml.parse(str);
  }
