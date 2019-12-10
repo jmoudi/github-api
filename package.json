@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "source": "./src/index.ts",
-  "typings": "./dist/index.d.ts",
+  "typings": "*.d.ts",
   "browser": "./dist/index.js",
   "scripts": {
     "test": "jest --watch",
@@ -11,7 +11,6 @@
     "compile": "tsc -b -i --listEmittedFiles --pretty --verbose -w",
 		"compile:nw": "tsc -b -i --listEmittedFiles",
 		"run:test": "ts-node-dev --transpileOnly --respawn --prefer-ts -r '/home/jm/Projects/Modules/ts/node/resolve-paths/src/loadpaths.ts' ./src/main.ts",
-		"run": "ts-node -r '/home/jm/Projects/Modules/ts/node/resolve-paths/src/loadpaths.ts' ./src/main.ts",
 		"show-configs": "tsc --showConfig && echo \n=======\n && jest --showConfig"
   },
   "dependencies": {
@@ -28,10 +27,7 @@
     "@types/node": ""
   },
   "private": true,
-  "author": {
-    "name": "Jonas Moudi",
-    "email": "jonas.moudi@gmail.com"
-  },
+  "author": "Jonas Moudi <jonas.moudi@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jmoudi/github-api.git"

@@ -1,4 +1,5 @@
-import { run } from '@/runner';
+//import { run } from '@/runner';
+import { run } from '@/tasks/setup';
 
 const getArgs = async () => {
 

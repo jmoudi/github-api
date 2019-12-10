@@ -1,5 +1,11 @@
 import { GithubApiConfig } from '@/config';
-import { ctx, onErr } from './runner';
+import { onErr, getContext, instance } from './runner';
+import { AxiosInstance } from 'axios';
+
+
+//TRY: instance as global, else as import
+//declare let instance: AxiosInstance
+
 export class GithubApi {
     username: string;
     constructor(config: GithubApiConfig) {
@@ -8,12 +14,21 @@ export class GithubApi {
     setDefaultErrorHandler() {
     }
     instance() {
-        return ctx.instance;
+        return instance
+        //return getContext().instance;
     }
     async getRepos(opts?) {
         const res = await this.instance().get(`users/${this.username}/repos`); //.catch(onErr);
         if (res) {
             const r: Repo[] = res.data;
+            return r;
+        }
+    }
+    async createRepo(repoInit: any) {
+        //const opts: 
+        const res = await this.instance().post(`user/repos`, repoInit).catch(onErr);
+        if (res) {
+            const r: GithubResult = res.data;
             return r;
         }
     }
