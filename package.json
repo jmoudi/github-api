@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@octokit/rest": "",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "fp-ts": "",
     "fp-ts-ramda": "",
     "fp-ts-routing": "",
